@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>i3WM Config Generator</title>
+
+    <link href="https://unpkg.com/nes.css/css/nes.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+
+<body class="min-h-screen flex flex-col items-center justify-center gap-6 p-6 text-sm bg-gradient-to-br from-[#1f1c2c] via-[#928dab] to-[#2c5364]">
+    <div class="nes-container is-dark is-rounded w-full max-w-4xl text-center shadow-xl">
+        <h1 class="text-2xl md:text-3xl text-mint-400">🎮 i3WM Config Generator</h1>
+        <p class="text-sm mt-2">Customize your i3 config with ease</p>
+    </div>
+
+    <form id="generate" class="w-full max-w-4xl p-6 nes-container is-dark is-rounded grid grid-cols-1 md:grid-cols-2 gap-6 shadow-lg ">
+        <div>
+            <label for="wallpaper" class="block mb-2">Wallpaper Path:</label>
+            <input type="text" name="wallpaper" id="wallpaper" class="nes-input w-full" placeholder="/path/to/image.jpg">
+        </div>
+
+        <div>
+            <label for="killKey" class="block mb-2">Kill Window Key (e.g., q):</label>
+            <input type="text" name="killKey" id="killKey" class="nes-input w-full text-gray-500" placeholder="q">
+        </div>
+
+        <div class="col-span-full text-center">
+            <input type="submit" value="Generate Config" class="nes-btn is-primary" />
+        </div>
+    </form>
+    <div class="w-full max-w-4xl nes-container is-dark is-rounded shadow-lg p-4">
+        <label for="userText" class="block mb-2">📝 Generated Config:</label>
+        <textarea id="userText" rows="12" class="w-full p-2 rounded border-2 border-gray-600 bg-black text-green-400 text-xs"></textarea>
+        <div class="text-center mt-4">
+            <button onclick="saveToFile()" class="nes-btn is-success">⬇️ Download Config</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
